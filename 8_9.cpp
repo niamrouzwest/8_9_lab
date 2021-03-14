@@ -17,7 +17,7 @@ void list::ListSize(int &count)
         tmp=tmp->Next;
         }
 }
-//Чтение из файла
+
 void list::Fileread(Home &array)
 {
     FILE *input = fopen("Home.csv", "r");
@@ -47,7 +47,7 @@ void list::Fileread(Home &array)
         Head = tmp;
     }
 };
-//Деструктор
+
 list::~list()
 {
     while(Head!=NULL)
@@ -57,7 +57,7 @@ list::~list()
         Head=tmp;
     }
 }
-//Вывод Списка
+
 void list::printList()
 {
     Home *tmp=Head;
@@ -74,7 +74,7 @@ void list::printList()
     }
     std::cout<<std::endl;
 }
-//Вывод строчки списка
+
 void list::print(Home *tmp)
 {
         std::cout<<tmp->id<<",";
@@ -86,7 +86,7 @@ void list::print(Home *tmp)
         std::cout<<std::endl;
         std::cout<<std::endl;
 }
-// Функция поиска строчки в структуре 
+ 
 void list::Search() 
 {
     int choice=0;
@@ -228,7 +228,7 @@ void list::Search()
             }
         }
 }
-//Смена элементов
+
 void list::swap(Home &myschedule, int a)
 {
     Home *tmp1 = Head;
@@ -271,7 +271,7 @@ void list::swap(Home &myschedule, int a)
     tmp1->cost = tmp2->cost;
     tmp2->cost = n;
 }
-//Изменение элемента списка
+
 void list::edit(Home &spisokhome, int a)
 {
     Home *tmp = Head;
@@ -306,7 +306,7 @@ void list::edit(Home &spisokhome, int a)
     std::cin>>n;
     tmp->cost = n;
 }
-//Добавить новый элемент списка 
+ 
 void list::add(Home &spisokhome, int &a)
 {
     std::cout<<"Dobavlenie novogo elementa"<< std::endl;
@@ -334,7 +334,7 @@ void list::add(Home &spisokhome, int &a)
     Head=tmp;
     a++;
 }
-//сортировка списка методом 
+ 
 void list::sort()
 {
     std::cout<<"Spisok"<< std::endl;
@@ -362,7 +362,7 @@ void list::sort()
     if(h != NULL) 
         Head = h;
 }
-//Разделение Списка
+
 void list::Divide(list &spisokhome, list &secondspisokhome, int index)
 {
     Home * tmp= spisokhome.Head;
@@ -377,7 +377,7 @@ void list::Divide(list &spisokhome, list &secondspisokhome, int index)
         tmp = tmp->Next; 
     }
 }
-//Соединение списка
+
 void list::Unite( list &spisokhome, list &secondspisokhome)
 {
 Home * tmp= spisokhome.Head;
@@ -392,7 +392,7 @@ Home * tmp= spisokhome.Head;
     }
     secondspisokhome.Head=nullptr;
 }
-//Запись в файл
+
 void list::file(Home spisokhome)
 {
     std::ofstream filew;
