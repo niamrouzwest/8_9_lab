@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <cstring>
 #include "home.h"
-//#include "8_9.cpp"
+
 int main()
 {
     Home spisokhome;
